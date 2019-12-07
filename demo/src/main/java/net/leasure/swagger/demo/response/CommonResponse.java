@@ -1,6 +1,5 @@
 package net.leasure.swagger.demo.response;
 
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.leasure.swagger.demo.enums.ResponseEnums;
@@ -17,7 +16,7 @@ public class CommonResponse<T> implements Serializable {
     private String message;
     private T data;
 
-    private CommonResponse(ResponseEnums responseEnums) {
+    public CommonResponse(ResponseEnums responseEnums) {
         this.code = responseEnums.getCode();
         this.message = responseEnums.getMessage();
     }

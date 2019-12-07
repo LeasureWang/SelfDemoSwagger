@@ -1,4 +1,4 @@
-package net.leasure.swagger.demo.request;
+package net.leasure.swagger.demo.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,9 +12,9 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class SwaggerDemoRequest implements Serializable {
+public class SwaggerDemoResponse implements Serializable {
 
-    private static final long serialVersionUID = 7192845920667864678L;
+    private static final long serialVersionUID = 8619159150377139019L;
 
     private long id;
     private String agent;
