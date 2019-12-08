@@ -1,8 +1,6 @@
 package net.leasure.swagger.demo.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import net.leasure.swagger.demo.request.SwaggerDemoRequest;
 import net.leasure.swagger.demo.response.CommonResponse;
 import net.leasure.swagger.demo.response.SwaggerDemoListResponse;
@@ -32,6 +30,12 @@ public class SwaggerDemoController {
         return swaggerDemoService.insert(request);
     }
 
+
+    @ApiResponses(value = {
+            @ApiResponse(code = 5005, message = "Invalid Database Connection", response = void.class),
+            @ApiResponse(code = 5006, message = "RestTemple Call Failed", response = void.class),
+            @ApiResponse(code = 5007, message = "Connection Timeout", response = void.class)
+    })
     @GetMapping("/getById/{id}")
     public CommonResponse<SwaggerDemoResponse> getById(@PathVariable String id) {
 
