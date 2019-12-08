@@ -1,5 +1,6 @@
 package net.leasure.swagger.demo.controller;
 
+import io.swagger.annotations.ApiOperation;
 import net.leasure.swagger.demo.request.SwaggerDemoRequest;
 import net.leasure.swagger.demo.response.CommonResponse;
 import net.leasure.swagger.demo.response.SwaggerDemoListResponse;
@@ -19,6 +20,7 @@ public class SwaggerDemoController {
     @Autowired
     private SwaggerDemoService swaggerDemoService;
 
+    @ApiOperation(value ="数据插入接口",notes = "根据模型数据格式使用POST请求插入一条数据到database")
     @PostMapping("/insert")
     public CommonResponse insert(@Valid @RequestBody SwaggerDemoRequest request,
                                  BindingResult bindingResult) {
