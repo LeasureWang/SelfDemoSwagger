@@ -11,5 +11,5 @@ public interface SwaggerDemoService {
 
     CommonResponse<SwaggerDemoResponse> getById(String id);
 
-    CommonResponse<SwaggerDemoListResponse> getList();
+    CommonResponse<SwaggerDemoListResponse> getList(String agent, int refNumber, String location);
 }

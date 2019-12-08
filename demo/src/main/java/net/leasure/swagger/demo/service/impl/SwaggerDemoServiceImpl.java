@@ -91,7 +91,7 @@ public class SwaggerDemoServiceImpl implements SwaggerDemoService {
     }
 
     @Override
-    public CommonResponse<SwaggerDemoListResponse> getList() {
+    public CommonResponse<SwaggerDemoListResponse> getList(String agent, int refNumber, String location) {
 
         try {
 
