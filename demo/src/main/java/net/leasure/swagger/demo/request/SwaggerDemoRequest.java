@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @ApiModel(
-        value = "插入的数据模型",
+//        value = "插入的数据模型",
         description = "根据下面的数据格式构造数据插入数据库")
 @Data
 @AllArgsConstructor
