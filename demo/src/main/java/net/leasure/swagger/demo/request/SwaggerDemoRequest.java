@@ -41,6 +41,7 @@ public class SwaggerDemoRequest implements Serializable {
     private int refNumber;
     private BigDecimal costPrice;
     private BigDecimal sellingPrice;
+    @ApiModelProperty(value = "制造时间",example = "yyyy-MM-dd HH:mm:ss")
     private String productionDate;
     private String tel;
     private String remark;
