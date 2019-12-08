@@ -1,6 +1,5 @@
 package net.leasure.swagger.demo.controller;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import net.leasure.swagger.demo.request.SwaggerDemoRequest;
