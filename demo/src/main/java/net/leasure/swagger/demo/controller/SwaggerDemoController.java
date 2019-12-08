@@ -36,6 +36,7 @@ public class SwaggerDemoController {
             @ApiResponse(code = 5006, message = "RestTemple Call Failed", response = void.class),
             @ApiResponse(code = 5007, message = "Connection Timeout", response = void.class)
     })
+    @ApiOperation(value = "通过id查询接口",response = SwaggerDemoResponse.class)
     @GetMapping("/getById/{id}")
     public CommonResponse<SwaggerDemoResponse> getById(@PathVariable String id) {
 
