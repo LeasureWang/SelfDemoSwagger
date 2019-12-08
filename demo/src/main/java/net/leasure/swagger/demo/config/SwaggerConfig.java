@@ -1,12 +1,13 @@
 package net.leasure.swagger.demo.config;
 
 import net.leasure.swagger.demo.controller.SwaggerDemoController;
+import net.leasure.swagger.demo.props.SwaggerConfigProps;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.annotations.ApiIgnore;
 import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -17,6 +18,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
+    @Autowired
+    private SwaggerConfigProps swaggerConfigProps;
 
     @Bean
     public Docket api() {
@@ -46,16 +50,13 @@ public class SwaggerConfig {
                 .enableUrlTemplating(true);
     }
 
-
-
-
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Swagger Demo apis UI")
-                .description("演示使用 Swagger 生成 RESTful 接口文档")
-                .contact(new Contact("LeaSir", "http:/test-url.com", "lea_sir@xx.com"))
-                .license("Apache v2.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+                .title(swaggerConfigProps.getTitle())
+                .description(swaggerConfigProps.getDescription())
+                .contact(new Contact(swaggerConfigProps.getName(), swaggerConfigProps.getUrl(), swaggerConfigProps.getEmail()))
+                .license(swaggerConfigProps.getLicense())
+                .licenseUrl(swaggerConfigProps.getLicenseUrl())
                 .version("v1.0")
                 .build();
     }
